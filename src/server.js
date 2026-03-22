@@ -1,3 +1,6 @@
+import tls from 'tls';
+tls.DEFAULT_MAX_VERSION = 'TLSv1.2';
+
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
