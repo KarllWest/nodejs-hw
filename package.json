@@ -20,6 +20,9 @@
     "url": "https://github.com/KarllWest/nodejs-hw/issues"
   },
   "homepage": "https://github.com/KarllWest/nodejs-hw#readme",
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
