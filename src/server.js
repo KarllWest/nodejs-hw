@@ -1,36 +1,33 @@
-import tls from 'tls';
-tls.DEFAULT_MAX_VERSION = 'TLSv1.2';
-
-import 'dotenv/config';
 import express from 'express';
+import 'dotenv/config';
 import cors from 'cors';
-import { errors } from 'celebrate';
 import { connectMongoDB } from './db/connectMongoDB.js';
 import { logger } from './middleware/logger.js';
 import { notFoundHandler } from './middleware/notFoundHandler.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import notesRoutes from './routes/notesRoutes.js';
+import { errors } from 'celebrate';
+import authRoutes from './routes/authRoutes.js';
+import cookieParser from 'cookie-parser';
 
-const PORT = process.env.PORT || 3000;
+const app = express();
+const PORT = process.env.PORT ?? 3000;
 
-const startServer = async () => {
-  await connectMongoDB();
+app.use(logger);
+app.use(express.json());
+app.use(cors());
+app.use(cookieParser());
 
-  const app = express();
+app.use(authRoutes);
+app.use(notesRoutes);
+app.use(notFoundHandler);
+app.use(errors());
+app.use(errorHandler);
 
-  app.use(logger);
-  app.use(express.json());
-  app.use(cors());
+await connectMongoDB();
 
-  app.use(notesRoutes);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
 
-  app.use(errors());
-  app.use(notFoundHandler);
-  app.use(errorHandler);
-
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
-};
-
-startServer();
+export default app;

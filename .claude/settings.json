@@ -2,7 +2,12 @@
   "permissions": {
     "allow": [
       "Bash(npm install:*)",
-      "Bash(timeout 5 node src/server.js)"
+      "Bash(timeout 5 node src/server.js)",
+      "Bash(node --check src/constants/tags.js)",
+      "Bash(node --check src/models/note.js)",
+      "Bash(node --check src/validations/notesValidation.js)",
+      "Bash(node --check src/controllers/notesController.js)",
+      "Bash(node --check src/routes/notesRoutes.js)"
     ]
   }
 }
