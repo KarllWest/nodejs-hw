@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Buy groceries",
+    "content": "Milk, eggs, bread, butter, coffee",
+    "tag": "Shopping"
+  },
+  {
+    "title": "Team standup",
+    "content": "Daily standup at 10am with the dev team",
+    "tag": "Meeting"
+  },
+  {
+    "title": "Finish project report",
+    "content": "Complete the Q1 project report and send it to the manager",
+    "tag": "Work"
+  },
+  {
+    "title": "Book flight to Paris",
+    "content": "Check prices on Skyscanner for late June flights",
+    "tag": "Travel"
+  },
+  {
+    "title": "Morning run",
+    "content": "5km run in the park every morning at 7am",
+    "tag": "Health"
+  },
+  {
+    "title": "Read Clean Code",
+    "content": "Finish chapters 4 and 5 this week",
+    "tag": "Personal"
+  },
+  {
+    "title": "Pay electricity bill",
+    "content": "Due by end of the month",
+    "tag": "Finance"
+  },
+  {
+    "title": "App feature ideas",
+    "content": "Dark mode, push notifications, offline support",
+    "tag": "Ideas"
+  },
+  {
+    "title": "Fix login bug",
+    "content": "Users get logged out randomly — investigate token refresh logic",
+    "tag": "Important"
+  },
+  {
+    "title": "Set up eslint",
+    "content": "Configure eslint with airbnb style guide for the new repo",
+    "tag": "Todo"
+  }
+]
